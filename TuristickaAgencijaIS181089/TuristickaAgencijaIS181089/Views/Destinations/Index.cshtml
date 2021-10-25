@@ -1,0 +1,58 @@
+﻿@using TuristickaAgencijaIS181089.Domain.DomainModels;
+@model TuristickaAgencijaIS181089.Domain.DTO.DestinationDto;
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<div class="container">
+    <form asp-action="Index" asp-controller="Destinations" method="post">
+        @Html.HiddenFor(m => m.Destinations)
+        <input asp-for="DestinationCountry" type="text" />
+        <input type="submit" value="Filter" class="btn btn-primary" />
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="m-3">
+        @if (Model.CurrentUserRole == EnumRoles.Administrator)
+        {
+    <a class="btn btn-success" asp-controller="Destinations" asp-action="Create">Add new destination</a>}
+                </div>
+   
+
+    @for (int i = 0; i < Model.Destinations.Count; i++)
+    {
+        var item = Model.Destinations[i];
+
+        if (i % 3 == 0)
+        {
+@:<div class="row">
+}
+
+
+<div class="col-md-3 m-4">
+    <div class="card" style="width: 18rem; height: 30rem;">
+        <img class="card-img-top" src="@item.DestinationImage" style="height: 50%" alt="Image for destination!" />
+
+        <div class="card-body">
+            <h3 class="card-title">@item.DestinationName</h3>
+            <p class="card-text">@item.DestinationCountry</p>
+
+        </div>
+
+        <div class="card-footer">
+            @if (Model.CurrentUserRole == EnumRoles.Administrator)
+            {
+        <a asp-controller="Destinations" asp-action="Edit" asp-route-p="@item.Id" class="btn btn-secondary">Edit</a>
+            }
+                        </div>
+    </div>
+</div> if (i % 3 == 2)
+{
+@:</div>
+}
+}
+
+</div>

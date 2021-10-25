@@ -1,0 +1,56 @@
+﻿@model List<TuristickaAgencijaIS181089.Domain.DomainModels.Line>
+@using TuristickaAgencijaIS181089.Domain.Idenitity;
+@using TuristickaAgencijaIS181089.Domain.DomainModels;
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<div class="container">
+
+    <div class="m-3">
+      @if (ViewBag.user.Role == EnumRoles.Administrator)
+      {    <a class="btn btn-success" asp-controller="Lines" asp-action="Create">Add new Line</a>
+      } </div>
+   
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        var item = Model[i];
+
+        if (i % 3 == 0)
+        {
+@:<div class="row">
+}
+
+
+<div class="col-md-3 m-4">
+    <div class="card" style="width: 18rem; height: 30rem;">
+        <img class="card-img-top" src="@item.LineImage" style="height: 50%" alt="Image for line!" />
+
+        <div class="card-body">
+            
+            <p class="card-text">From: @item.StartingDestination.DestinationName</p>
+            <p class="card-text">To: @item.FinalDestination.DestinationName</p>
+
+            <h6>Price: @item.LinePrice</h6>
+        </div>
+
+        <div class="card-footer">
+
+            <a asp-controller="Lines" asp-action="Reserve" asp-route-id="@item.Id">Reserve</a>|
+            @if (ViewBag.user.Role == EnumRoles.Administrator)
+            {
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>}|
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            @if (ViewBag.user.Role == EnumRoles.Administrator)
+            {
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>}
+        </div>
+    </div>
+</div> if (i % 3 == 2)
+{
+@:</div>
+}
+}
+
+</div>

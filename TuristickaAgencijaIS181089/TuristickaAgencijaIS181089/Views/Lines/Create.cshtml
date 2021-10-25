@@ -1,0 +1,61 @@
+﻿@model TuristickaAgencijaIS181089.Domain.DomainModels.Line
+@using TuristickaAgencijaIS181089.Domain.DomainModels;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+@if (ViewBag.user.Role == EnumRoles.Administrator)
+{
+    <h4>Line</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="DateTime" class="control-label"></label>
+                    <input asp-for="DateTime" class="form-control" />
+                    <span asp-validation-for="DateTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LinePrice" class="control-label"></label>
+                    <input asp-for="LinePrice" class="form-control" />
+                    <span asp-validation-for="LinePrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LineImage" class="control-label"></label>
+                    <input asp-for="LineImage" class="form-control" />
+                    <span asp-validation-for="LineImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartingDestinationId" class="control-label"></label>
+                    <select asp-for="StartingDestinationId" class="form-control" asp-items="ViewBag.StartingDestinationId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FinalDestinationId" class="control-label"></label>
+                    <select asp-for="FinalDestinationId" class="form-control" asp-items="ViewBag.FinalDestinationId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CompanyId" class="control-label"></label>
+                    <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+@if (ViewBag.user.Role == EnumRoles.User)
+{<p>Only administrators can create new lines</p>
+
+}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

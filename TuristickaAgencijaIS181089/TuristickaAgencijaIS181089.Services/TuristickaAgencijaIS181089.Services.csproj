@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GemBox.Document" Version="33.0.1290" />
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="MailKit" Version="2.15.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TuristickaAgencijaIS181089.Domain\TuristickaAgencijaIS181089.Domain.csproj" />
+    <ProjectReference Include="..\TuristickaAgencijaIs181089.Repository\TuristickaAgencijaIS181089.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

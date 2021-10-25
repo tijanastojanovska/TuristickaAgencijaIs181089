@@ -1,0 +1,37 @@
+﻿@model TuristickaAgencijaIS181089.Domain.DTO.ReserveDto
+
+@{
+    ViewData["Title"] = "Reserve";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Reserve selected line:</h1>
+
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4 m-auto">
+        <form asp-action="Reserve" method="post">
+            <input type="hidden" asp-for="LineId" />
+            <div class="form-group">
+                <label   asp-for="SelectedLine.StartingDestination.DestinationName"></label>
+                <input  disabled asp-for="SelectedLine.StartingDestination.DestinationName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedLine.FinalDestination.DestinationName"></label>
+                <input disabled asp-for="SelectedLine.FinalDestination.DestinationName" class="form-control" /> 
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

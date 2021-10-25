@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\stoja\\source\\repos\\TuristickaAgencijaIS181089\\TuristickaAgencijaIS181089.Domain\\TuristickaAgencijaIS181089.Domain.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\stoja\\source\\repos\\TuristickaAgencijaIS181089\\TuristickaAgencijaIS181089.Domain\\TuristickaAgencijaIS181089.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\stoja\\source\\repos\\TuristickaAgencijaIS181089\\TuristickaAgencijaIS181089.Domain\\TuristickaAgencijaIS181089.Domain.csproj",
+        "projectName": "TuristickaAgencijaIS181089.Domain",
+        "projectPath": "C:\\Users\\stoja\\source\\repos\\TuristickaAgencijaIS181089\\TuristickaAgencijaIS181089.Domain\\TuristickaAgencijaIS181089.Domain.csproj",
+        "packagesPath": "C:\\Users\\stoja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stoja\\source\\repos\\TuristickaAgencijaIS181089\\TuristickaAgencijaIS181089.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\stoja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "GemBox.Document": {
+              "target": "Package",
+              "version": "[33.0.1290, )"
+            },
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "jquery.datatables": {
+              "target": "Package",
+              "version": "[1.10.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
